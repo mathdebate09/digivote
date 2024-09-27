@@ -9,8 +9,12 @@ function Hero() {
   return (
     <section className="flex flex-col items-center justify-center pb-16 pt-4 font-body font-medium">
       <div className="py-16 text-center text-7xl font-bold tracking-wide text-black-softer">
-        <h2>Secure . Accessible .</h2>
-        <h2>Reliable . Simple .</h2>
+        <h2>
+          Secure . <span className="italic text-gray-500">Accessible .</span>
+        </h2>
+        <h2>
+          <span>Reliable</span> . Simple .
+        </h2>
         <p className="mt-4 max-w-[60rem] text-xl font-normal tracking-normal text-gray-400">
           DigiVote prioritizes accessibility, ensuring everyone can participate
           with ease. Built with top-notch security, your vote remains safe,

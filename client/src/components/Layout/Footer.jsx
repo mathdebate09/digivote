@@ -13,17 +13,17 @@ function Footer() {
             <div className="mb-6 md:mb-0">
               <Link to="/" className="flex items-center">
                 <img src={logo} className="z-10 me-3 h-8" alt="FlowBite Logo" />
-                <span className="font-logo self-center whitespace-nowrap text-2xl font-semibold">
+                <span className="self-center whitespace-nowrap font-logo text-2xl font-semibold">
                   DigiVote
                 </span>
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
               <div>
-                <h2 className="mb-6 cursor-default text-sm font-bold uppercase text-black">
+                <h2 className="text-black mb-6 cursor-default text-sm font-bold uppercase">
                   Features
                 </h2>
-                <ul className="text-black-soft font-medium">
+                <ul className="font-medium text-black-soft">
                   <li className="mb-4">
                     <Link to="/clubcal" className="hover:underline">
                       ClubCal
@@ -37,10 +37,10 @@ function Footer() {
                 </ul>
               </div>
               <div>
-                <h2 className="text-black-soft mb-6 cursor-default text-sm font-bold uppercase">
+                <h2 className="mb-6 cursor-default text-sm font-bold uppercase text-black-soft">
                   Follow us
                 </h2>
-                <ul className="text-black-soft font-medium">
+                <ul className="font-medium text-black-soft">
                   <li className="mb-4">
                     <a
                       rel="noopener noreferrer"
@@ -64,10 +64,10 @@ function Footer() {
                 </ul>
               </div>
               <div>
-                <h2 className="text-black-soft mb-6 cursor-default text-sm font-bold uppercase">
+                <h2 className="mb-6 cursor-default text-sm font-bold uppercase text-black-soft">
                   Legal
                 </h2>
-                <ul className="text-black-soft font-medium">
+                <ul className="font-medium text-black-soft">
                   <li className="mb-4">
                     <Link href="/privacy-policy" className="hover:underline">
                       Privacy Policy
@@ -82,9 +82,9 @@ function Footer() {
               </div>
             </div>
           </div>
-          <hr className="my-6 border-black sm:mx-auto lg:my-8" />
+          <hr className="border-black my-6 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-black-soft cursor-default text-sm sm:text-center">
+            <span className="cursor-default text-sm text-black-soft sm:text-center">
               <svg
                 className="mr-2 inline-block h-5"
                 viewBox="0 0 20 20"

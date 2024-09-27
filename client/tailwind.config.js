@@ -17,13 +17,13 @@ export default {
           softer: "#404040",
         },
         pastel: {
-          pink: '#FFD1DC',
-          blue: '#AEC6CF',
-          brown: '#d4a373',
-          mint: '#98FF98',
-          purple: '#CBAACB',
-          orange: '#FFB347'
-        }
+          pink: "#FFD1DC",
+          blue: "#AEC6CF",
+          brown: "#d4a373",
+          mint: "#98FF98",
+          purple: "#CBAACB",
+          orange: "#FFB347",
+        },
       },
     },
   },

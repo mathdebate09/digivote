@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-function NavDesktop ({}) {
+function NavDesktop({}) {
   return (
     <nav>
       {/* Your mobile navigation content goes here */}
@@ -11,6 +11,6 @@ function NavDesktop ({}) {
       </ul>
     </nav>
   );
-};
+}
 
 export default NavDesktop;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-function NavMobile ({}) {
+function NavMobile({}) {
   return (
     <nav>
       {/* Your mobile navigation content goes here */}
@@ -11,6 +11,6 @@ function NavMobile ({}) {
       </ul>
     </nav>
   );
-};
+}
 
 export default NavMobile;
