@@ -3,9 +3,10 @@ require('dotenv').config()
 const authRouter = require('./routers/auth.router')
 const voterProfileRouter = require('./routers/voterProfile.router')
 const locationRouter = require('./routers/location.router')
+const voteRoutes = require('./routers/vote.router')
 const cookieParser = require('cookie-parser')
 const path = require('path')
-
+const cors = require('cors')
 const app = express();
 
 
@@ -18,10 +19,11 @@ const __location = path.resolve();
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.urlencoded())
-
+app.use(cors())
 app.use("/api/auth",authRouter) 
 app.use("/api/voters", voterProfileRouter)
 app.use("/api/locations", locationRouter)
+app.use('/api/votes', voteRoutes);
 
 app.use(express.static(path.join(__location,'/client/dist')));
 

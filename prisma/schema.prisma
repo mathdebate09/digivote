@@ -28,6 +28,19 @@ model Voter {
   gender         Gender  // Gender of the voter
 }
 
+
+model Vote {
+  id          String    @id @default(uuid())
+  voterId     String    
+  name        String   // Name of the voter
+  data        Json     // Any additional data (you can customize the type as needed)
+  election    String   // Election name or identifier
+  candidate   String   // Candidate name or identifier
+  party       String   // Party name or identifier
+  createdAt   DateTime @default(now()) // Timestamp for when the voter was created
+}
+
+
 enum VotingMethod {
   ONLINE
   POSTAL
