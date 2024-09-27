@@ -136,7 +136,6 @@ typing_extensions==4.12.2
 uritemplate==4.1.1
 urllib3==2.2.3
 uvicorn==0.30.6
-uvloop==0.20.0
 w3lib==2.2.1
 watchfiles==0.24.0
 websocket-client==1.8.0
