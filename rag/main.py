@@ -1,8 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-from typing import List
-from app import generate_response, format_history
+from app import generate_response
 from retriever import get_retriever, update_document_set
 from dotenv import load_dotenv
 import os
@@ -21,7 +20,6 @@ app.add_middleware(
 
 class ChatInput(BaseModel):
     message: str
-    history: List[dict] = []
 
 class ChatOutput(BaseModel):
     response: str
@@ -29,8 +27,7 @@ class ChatOutput(BaseModel):
 @app.post("/chat", response_model=ChatOutput)
 async def chat(chat_input: ChatInput):
     try:
-        formatted_history = format_history(chat_input.history)
-        response = generate_response(chat_input.message, formatted_history)
+        response = generate_response(chat_input.message, [])
         return ChatOutput(response=response)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
