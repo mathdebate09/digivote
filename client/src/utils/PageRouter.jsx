@@ -3,21 +3,45 @@ import React from "react";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import BoothMap from "../components/BoothMap";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../components/Home";
+import Landing from "../components/Landing";
 import Login from "../components/Login";
+import Profile from "../components/Profile";
+import SignUp from "../components/SignUp";
+import Voting from "../components/Voting";
 
 function PageRouter() {
   const routes = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <Landing />,
       errorElement: <ErrorPage />,
     },
     {
       path: "/login",
       element: <Login />,
-      errorElement: <ErrorPage />,
+    },
+    {
+      path: "/boothmap",
+      element: <BoothMap />,
+    },
+    {
+      path: "/home",
+      element: <Home />,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
+    },
+    {
+      path: "/signup",
+      element: <SignUp />,
+    },
+    {
+      path: "/voting",
+      element: <Voting />,
     },
   ]);
 
