@@ -15,3 +15,28 @@ model User {
   password   String
   profilePic String  @default("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png")
 }
+
+model Voter {
+  id             String     @id @default(uuid()) // Voter ID (auto-generated)
+  votingId       String  @unique
+  location       String  // Location of the voter
+  votingMethod   VotingMethod // Voting preference (Online, Postal, or Absentee)
+  braille        Boolean // Whether the voter needs braille assistance
+  interpreter    Boolean // Whether the voter needs an interpreter
+  wheelchair     Boolean // Whether the voter needs wheelchair accessibility
+  age            Int     // Age of the voter
+  gender         Gender  // Gender of the voter
+}
+
+enum VotingMethod {
+  ONLINE
+  POSTAL
+  ABSENTEE
+  OFFLINE
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
