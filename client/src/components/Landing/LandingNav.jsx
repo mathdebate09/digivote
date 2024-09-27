@@ -19,7 +19,7 @@ function LandingNav({}) {
             Sign Up
           </button>
         </Link>
-        <button className="font-bold text-blue-600">Log In</button>
+        <Link to="/login"><button className="font-bold text-blue-600">Log In</button></Link>
       </ul>
     </nav>
   );
