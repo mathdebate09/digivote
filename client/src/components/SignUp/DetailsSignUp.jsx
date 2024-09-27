@@ -44,7 +44,7 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
             type="text"
             name="name"
             id="name"
-            placeholder="Name"
+            placeholder="eg. Mandeep Singh"
             required
             className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
@@ -58,7 +58,7 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
               type="email"
               name="email"
               id="email"
-              placeholder="Email"
+              placeholder="eg. mandips@gmail.com"
               required
               className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
