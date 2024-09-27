@@ -4,13 +4,12 @@ import Footer from "./Footer";
 import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 
-function Layout({ children }) {
+function Layout({ children, bgColor }) {
   return (
-    <div>
-      <NavMobile />
+    <div className={`${bgColor} font-libre font-medium`}>
       <NavDesktop />
-      <main>{children}</main>
-      <Footer />
+      <main className="px-4 md:px-24">{children}</main>
+      <NavMobile />
     </div>
   );
 }

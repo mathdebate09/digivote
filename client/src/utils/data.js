@@ -33,4 +33,11 @@ const users = [
   },
 ];
 
-export { users };
+const activeUser = {
+  name: "Vikas Mourya",
+  email: "vikasisagoodboy@gmail.com",
+  phone: "1234512345",
+  aadhar: "456789012345",
+}
+
+export { users, activeUser };
