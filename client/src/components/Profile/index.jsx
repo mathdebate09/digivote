@@ -58,7 +58,9 @@ function Profile() {
           <div>
             <button className="flex w-60 flex-col items-center justify-center rounded-lg bg-green-500 px-6 py-3 text-white shadow-md hover:bg-green-600">
               <p className={`${textSizeClass} font-semibold`}>Help</p>
-              <p className="text-sm">One Line on Help</p>
+              <p className="text-sm">
+                Get Help from the officials or chat with our AI Assitant
+              </p>
             </button>
           </div>
           <div>
@@ -68,7 +70,10 @@ function Profile() {
                   Update Location
                 </p>
               </Link>
-              <p className="text-sm">One line on Update Location</p>
+              <p className="text-sm">
+                Update your location to get live location of active booths
+                nearby{" "}
+              </p>
             </button>
           </div>
           <div>
