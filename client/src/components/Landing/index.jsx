@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
 
 import ChatBot from "../ChatBot";
+import TranslateButton from "../TranslateButton";
+
 import Footer from "../Layout/Footer";
 import Hero from "./Hero";
 import LandingNav from "./LandingNav";
@@ -69,6 +71,7 @@ function Landing() {
       ></motion.div> */}
       <LandingNav />
       <Hero />
+      <TranslateButton />
       <ChatBot />
       <Footer />
       {/* <div className="ball fixed left-0 -z-[1] top-0 h-40 w-40 rounded-full bg-blue-500 blur-3xl"></div> */}

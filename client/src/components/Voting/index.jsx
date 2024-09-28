@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import Layout from "../Layout"
 import ChatBot from "../ChatBot";
-import CountdownTimer from "../Home/CountDownTimer";
+import CountdownTimer from "../Home/CountdownTimer";
 
 import lokSabha from "../../assets/cards/lok-sabha.png"
 import rajyaSabha from "../../assets/cards/rajya-sabha.png"
