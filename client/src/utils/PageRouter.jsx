@@ -11,6 +11,8 @@ import Login from "../components/Login";
 import Profile from "../components/Profile";
 import SignUp from "../components/SignUp";
 import Voting from "../components/Voting";
+import RajyaSabha from "../components/Voting/RajyaSabha";
+import LokSabha from "../components/Voting/LokSabha";
 
 function PageRouter() {
   const routes = createBrowserRouter([
@@ -43,6 +45,14 @@ function PageRouter() {
       path: "/voting",
       element: <Voting />,
     },
+    {
+      path: '/voting/rajya-sabha',
+      element: <RajyaSabha/>
+    },
+    {
+      path: '/voting/lok-sabha',
+      element: <LokSabha/>
+    }
   ]);
 
   return <RouterProvider router={routes} />;

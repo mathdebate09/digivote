@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 
 import logo from "../../assets/logos/digivote.png";
-
+import TranslateButton from "../TranslateButton";
 function NavDesktop({}) {
   return (
     <nav className="flex items-center justify-start md:justify-between bg-transparent md:px-24 md:py-8 px-4 py-6 font-body font-medium">
