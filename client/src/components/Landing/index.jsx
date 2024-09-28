@@ -8,9 +8,11 @@ import { useNavigate } from "react-router-dom";
 import ChatBot from "../ChatBot";
 import TranslateButton from "../TranslateButton";
 
+
 import Footer from "../Layout/Footer";
 import Hero from "./Hero";
 import LandingNav from "./LandingNav";
+import SignButton from "../SignButton";
 
 function Landing() {
   // const textVariants = {
@@ -71,6 +73,7 @@ function Landing() {
       ></motion.div> */}
       <LandingNav />
       <Hero />
+      <SignButton />
       <TranslateButton />
       <ChatBot />
       <Footer />

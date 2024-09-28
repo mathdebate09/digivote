@@ -7,6 +7,8 @@ import CountdownTimer from "../Home/CountdownTimer";
 
 import lokSabha from "../../assets/cards/lok-sabha.png"
 import rajyaSabha from "../../assets/cards/rajya-sabha.png"
+import TranslateButton from "../TranslateButton";
+import SignButton from "../SignButton";
 
 function Voting({ }) {
 
@@ -26,6 +28,8 @@ function Voting({ }) {
           <Link to="/voting/lok-sabha" className="bg-yellow-400 rounded-full px-4 py-2 text-2xl">Vote Now!</Link>
         </div>
       </div>
+      <SignButton />
+      <TranslateButton />
       <ChatBot />
     </Layout>
   )

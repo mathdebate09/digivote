@@ -5,12 +5,13 @@ import Layout from "../Layout";
 import CountdownTimer from './CountdownTimer';
 import { activeUser } from "../../utils/data";
 import ChatBot from "../ChatBot"
-
+import TranslateButton from "../TranslateButton";
 
 import localBodies from "../../assets/cards/local-bodies.png";
 import parliament from "../../assets/cards/parliament.png";
 import lokSabha from "../../assets/cards/lok-sabha.png";
 import rajyaSabha from "../../assets/cards/rajya-sabha.png";
+import SignButton from "../SignButton";
 
 function getGreeting() {
   const currentHour = new Date().getHours();
@@ -57,6 +58,9 @@ function Home() {
         <img src={rajyaSabha} alt="Rajya Sabha" className="w-4/5 rounded-lg mx-auto shadow-2xl" />
         <img src={localBodies} alt="Local Bodies" className="w-4/5 rounded-lg mx-auto shadow-2xl" />
       </div>
+      
+      <SignButton />
+      <TranslateButton />
       <ChatBot />
     </Layout>
   );

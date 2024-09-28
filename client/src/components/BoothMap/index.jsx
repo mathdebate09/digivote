@@ -15,6 +15,7 @@ import { FaChevronCircleLeft } from "react-icons/fa";
 import { BiBraille } from "react-icons/bi";
 import { MdHearing } from "react-icons/md";
 import { MdOutlineInterpreterMode } from "react-icons/md";
+import TranslateButton from '../TranslateButton';
 
 const fetchLocations = async () => {
   try {
@@ -236,6 +237,7 @@ function BoothMap() {
           </InfoWindow>
         )}
       </Map>
+      <TranslateButton/>
       <ChatBot />
     </APIProvider>
     </div>

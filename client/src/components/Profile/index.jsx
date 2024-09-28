@@ -6,6 +6,8 @@ import profileImage from "../../assets/vectors/profile.svg";
 import users from "../../utils/userdata";
 import { ChangeTextSize } from "../ChangeTXT/ChangeText";
 import Layout from "../Layout";
+import TranslateButton from "../TranslateButton";
+import ChatBot from "../ChatBot";
 
 function Profile() {
   const id = 2;
@@ -72,7 +74,11 @@ function Profile() {
           </div>
         </div>
       </div>
+      <TranslateButton />
+      <ChatBot />
     </Layout>
+
+    
   );
 }
 
