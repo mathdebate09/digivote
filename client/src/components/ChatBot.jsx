@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-
 import { MdCancel } from "react-icons/md";
+import { IoMdChatbubbles } from "react-icons/io";
+import { FiSend } from "react-icons/fi";
+import botAvatar from "../assets/vectors/chat-robot.avif";
+import userAvatar from "../assets/vectors/chat-human.avif";
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,22 +57,32 @@ const ChatBot = () => {
         className={`w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center cursor-pointer text-2xl text-white shadow-lg ${isOpen ? 'hidden' : ''}`}
         onClick={toggleChatbot}
       >
-        ⭐
+        <IoMdChatbubbles className="text-white text-3xl" />
       </div>
       <div
         className={`fixed bottom-20 right-5 w-80 h-96 bg-white rounded-lg shadow-lg flex flex-col justify-between transition-transform duration-300 ease-in-out ${isOpen ? 'flex' : 'hidden'}`}
       >
         <div className="bg-blue-600 text-white p-3 rounded-t-lg flex justify-between items-center">
-          <span className="font-semibold">Sevak</span>
+          <span className="font-semibold">Sahayak</span>
           <button onClick={toggleChatbot} className="text-xl filter-"><MdCancel className="text-white text-2xl"/></button>
         </div>
         <div className="p-3 flex-1 overflow-y-auto bg-gray-100 flex flex-col">
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-3 rounded mb-2 max-w-xs ${msg.role === 'user' ? 'bg-blue-600 text-white self-end' : 'bg-gray-300 self-start'}`}
+              className={`flex items-start mb-2 ${msg.role === 'user' ? 'self-end' : 'self-start'}`}
             >
-              {msg.content}
+              {msg.role === 'bot' && (
+                <img src={botAvatar} alt="Bot Avatar" className="w-8 h-8 rounded-full mr-2" />
+              )}
+              <div
+                className={`p-3 rounded max-w-xs ${msg.role === 'user' ? 'bg-blue-600 text-white' : 'bg-gray-300'}`}
+              >
+                {msg.content}
+              </div>
+              {msg.role === 'user' && (
+                <img src={userAvatar} alt="User Avatar" className="w-8 h-8 rounded-full ml-2" />
+              )}
             </div>
           ))}
           {loading && (
@@ -89,9 +102,9 @@ const ChatBot = () => {
           />
           <button
             onClick={sendMessage}
-            className="ml-2 p-2 bg-blue-600 text-white rounded-3xl hover:bg-blue-700 transition-colors"
+            className="ml-2 p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Send
+            <FiSend className="text-2xl text-white"/>
           </button>
         </div>
       </div>

@@ -25,8 +25,8 @@ function Footer() {
                 </h2>
                 <ul className="font-medium text-black-soft">
                   <li className="mb-4">
-                    <Link to="/clubcal" className="hover:underline">
-                      ClubCal
+                    <Link to="/boothmap" className="hover:underline">
+                      Polling Booths
                     </Link>
                   </li>
                   <li>

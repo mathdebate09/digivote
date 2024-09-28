@@ -1,5 +1,6 @@
 import React, {useCallback, useState, useEffect} from 'react';
 
+import { useNavigate } from "react-router-dom";
 import {
   AdvancedMarker,
   AdvancedMarkerAnchorPoint,
@@ -9,7 +10,11 @@ import {
   Pin,
   useAdvancedMarkerRef
 } from '@vis.gl/react-google-maps';
-import LandingNav from '../Landing/LandingNav';
+import ChatBot from '../ChatBot';
+import { FaChevronCircleLeft } from "react-icons/fa";
+import { BiBraille } from "react-icons/bi";
+import { MdHearing } from "react-icons/md";
+import { MdOutlineInterpreterMode } from "react-icons/md";
 
 const fetchLocations = async () => {
   try {
@@ -110,12 +115,16 @@ function BoothMap() {
     []
   );
 
-
+  const navigate = useNavigate();
 
   return (
     <div className="overflow-hidden">
-    <LandingNav/>
+      <FaChevronCircleLeft
+        className="fixed text-4xl top-8 left-8 z-50 cursor-pointer"
+        onClick={() => navigate(-1)}
+      />
     <APIProvider apiKey={API_KEY} libraries={['marker']}>
+
       <Map
        className='w-screen h-screen overflow-hidden p-0 m-0'
         mapId={'bf51a910020fa25a'}
@@ -209,15 +218,15 @@ function BoothMap() {
               markers.map(marker => {
                 if(marker.id === selectedId){
                   return (
-                    <div>
+                    <div className="mx-auto">
                       <h1 className='text-2xl font-bold'>Polling Booth</h1>
                       <h3 className='text-lg font-semibold'>Name: {marker.name}</h3>
                       <p className='text-md'>Address: {marker.address}</p>
                       <br/>
-                      <ul>
-                        <li className='text-md'>braillie: {marker.braille}</li>
-                        <li className='text-md'>hearing aid: {marker.hearingAid}</li>
-                        <li className='text-md'>interpreter: {marker.interpreter}</li>
+                      <ul className="flex text-3xl gap-4 mx-auto">
+                        <li className='text-md'>{marker.braille && <BiBraille/>}</li>
+                        <li className='text-md'>{marker.hearingAid && <MdHearing />}</li>
+                        <li className='text-md'>{marker.interpreter && <MdOutlineInterpreterMode />}</li>
                       </ul>
                     </div>
                   )
@@ -227,6 +236,7 @@ function BoothMap() {
           </InfoWindow>
         )}
       </Map>
+      <ChatBot />
     </APIProvider>
     </div>
   );
