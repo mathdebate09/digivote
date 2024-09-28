@@ -16,6 +16,7 @@ import { BiBraille } from "react-icons/bi";
 import { MdHearing } from "react-icons/md";
 import { MdOutlineInterpreterMode } from "react-icons/md";
 import TranslateButton from '../TranslateButton';
+import { handleAudio } from "../../utils/helper"
 
 const fetchLocations = async () => {
   try {
@@ -84,6 +85,7 @@ function BoothMap() {
       console.log(sorted)
     }
     fetchData()
+    handleAudio("On top left you'll find return button, bottom right,  you'll find utilities like AI Sahayak")
   },[])
 
   const onMouseEnter = useCallback((id) => setHoverId(id), []);

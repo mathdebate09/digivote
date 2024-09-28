@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../Layout";
 import { getAuth, signInWithEmailAndPassword, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
@@ -6,6 +6,7 @@ import {auth} from '../../firebase/config'
 import { useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {signinFailure, signinStart, signinSuccess} from "../../context/user/userSlice"
+import { handleAudio } from "../../utils/helper"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -22,6 +23,10 @@ function Login() {
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    handleAudio("Login with your exisitng credentials or take help from our AI Sahayak")
+  })
 
   // Configure reCAPTCHA for phone verification
   const configureRecaptcha = () => {
@@ -144,7 +149,7 @@ function Login() {
       />
       </label>
 
-      <div className="flex mt-4 items-center justify-center p-2">
+      <div onClick={() => handleAudio("Submit yor entered credentials")} className="flex mt-4 items-center justify-center p-2">
       <button
       type="submit"
       className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-6 py-3 text-base font-medium text-white shadow-sm transition duration-150 ease-in-out hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"

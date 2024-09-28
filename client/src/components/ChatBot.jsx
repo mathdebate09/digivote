@@ -4,6 +4,7 @@ import { IoMdChatbubbles } from "react-icons/io";
 import { FiSend } from "react-icons/fi";
 import botAvatar from "../assets/vectors/chat-robot.avif";
 import userAvatar from "../assets/vectors/chat-human.avif";
+import { handleAudio } from "../utils/helper"
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,11 @@ const ChatBot = () => {
 
         const data = await response.json();
         const botMessage = { role: 'bot', content: data.response };
-        setMessages([...messages, userMessage, botMessage]);
+        setMessages((prevMessages) => {
+          const newMessages = [...prevMessages, userMessage, botMessage];
+          handleAudio(botMessage.content); // Read the bot message aloud
+          return newMessages;
+        });
       } catch (error) {
         console.error('Error fetching response:', error);
       } finally {
@@ -64,7 +69,7 @@ const ChatBot = () => {
       >
         <div className="bg-blue-600 text-white p-3 rounded-t-lg flex justify-between items-center">
           <span className="font-semibold">Sahayak</span>
-          <button onClick={toggleChatbot} className="text-xl filter-"><MdCancel className="text-white text-2xl"/></button>
+          <button onClick={toggleChatbot} className="text-xl filter-white"><MdCancel className="text-white text-2xl"/></button>
         </div>
         <div className="p-3 flex-1 overflow-y-auto bg-gray-100 flex flex-col">
           {messages.map((msg, index) => (
