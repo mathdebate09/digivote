@@ -10,42 +10,39 @@ An extremely accessible voting portal with widespread screen reader and multilin
 
 ### Landing Page
 
-![LandingPage](public\landing-page.png)
+![landing-page](https://github.com/user-attachments/assets/3b50e51b-95a6-45c3-8271-0aedc3276620)
 
 ### Home Page
 
-![HomePage](public\home-page.png)
+![home-page](https://github.com/user-attachments/assets/c8160552-45b3-4f7c-acf3-80da9ee817c3)
 
 ### Home Page - Mobile
 
-![HomePageMobile](public\home-page-phone.png)
+![home-page-phone](https://github.com/user-attachments/assets/ec82ff3e-1ab1-47b8-945b-e1ff7b60e6de)
 
 ### Polling Booth Maps
 
-![Polling Booth maps](public\boothmap.png)
+![boothmap](https://github.com/user-attachments/assets/8550d260-3513-4665-9b61-73cc9c28534c)
 
 ### Login Interface
 
-![Login-1](public\login-1.png)
+![login-1](https://github.com/user-attachments/assets/7224c2f2-dd27-4281-b7c4-0c97c3dff96a)
 
 ### 2FA Secure Auth - Firebase
 
-![2FA](public\2fa-auth.png)
+![2fa-auth](https://github.com/user-attachments/assets/771e455e-91ce-490d-a1a6-9ed75e1b0df9)
 
 ### AI Sahayak - QnA Assistant
 
-![chatbot](public\chatbot.png)
+![chatbot](https://github.com/user-attachments/assets/c5f3a3cc-1abb-4f2d-b55a-77420fa57859)
 
 ### Multilingual Translation
 
-![chatbot](public\translation.png)
+![translation](https://github.com/user-attachments/assets/dfe384ce-fce2-469b-9eaf-ee5a492816a6)
 
 ### Sign Language Support
 
-<video width="600" controls>
-  <source src="public/sign-language.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video
+[Sign Language Demo](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWVyaHJ2bG5ob2l4MWhlaHdkY2NzZnhpbWtnNWV2Ym56bnJwZGt6MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yLpj6vcNTjxDdHA5QA/giphy.gif)
 
 ## Features
 
