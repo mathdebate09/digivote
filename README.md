@@ -40,6 +40,13 @@ An extremely accessible voting portal with widespread screen reader and multilin
 
 ![chatbot](public\translation.png)
 
+### Sign Language Support
+
+<video width="600" controls>
+  <source src="public/sign-language.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video
+
 ## Features
 
 - Minimalistic and modern UI design with UX
