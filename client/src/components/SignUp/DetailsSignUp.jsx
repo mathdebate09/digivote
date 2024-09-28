@@ -101,11 +101,10 @@ function DetailsSignUp({ handleNextClick, step, setStep, setFormData }) {
             required
             value={userInfo.email}
             onChange={handleChange}
-            className={`mt-2 block w-full rounded-md border px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:outline-none focus:ring-2 ${
-              errors.email ?
+            className={`mt-2 block w-full rounded-md border px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:outline-none focus:ring-2 ${errors.email ?
                 "border-red-500 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-            }`}
+                : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              }`}
           />
           {errors.email && (
             <p className="mt-1 flex items-center text-sm text-red-500">
@@ -142,11 +141,10 @@ function DetailsSignUp({ handleNextClick, step, setStep, setFormData }) {
             required
             value={userInfo.confirmpass}
             onChange={handleChange}
-            className={`mt-2 block w-full rounded-md border px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:outline-none focus:ring-2 ${
-              errors.password ?
+            className={`mt-2 block w-full rounded-md border px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:outline-none focus:ring-2 ${errors.password ?
                 "border-red-500 focus:border-red-500 focus:ring-red-500"
-              : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
-            }`}
+                : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              }`}
           />
           {errors.password && (
             <p className="mt-1 flex items-center text-sm text-red-500">

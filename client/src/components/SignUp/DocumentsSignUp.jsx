@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
-
+import {useDispatch, useSelector} from 'react-redux';
+import { signinSuccess } from "../../context/user/userSlice";
 import { auth } from "../../firebase/config";
 
 function DocumentsSignUp({ setFormData, formData }) {
   const [errorMessages, setErrorMessages] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [disability, setDisability] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const userDocs = {
-      Aadhar: data.get("Aadhar"),
-      Disability: data.get("disability"),
-      MedicalCertificate: data.get("MedCert"),
+      aadhar: data.get("Aadhar"),
+      voterId: data.get('voterId'),
+      disability: data.get("disability"),
+      medicalCertificate: data.get("MedCert"),
     };
 
     if (!formData.name || !formData.password || !formData.email) {
@@ -38,6 +42,7 @@ function DocumentsSignUp({ setFormData, formData }) {
       setLoading(false);
 
       if (res.ok) {
+        dispatch(signinSuccess({...formData, login: false, disability  }))
         navigate("/login");
       }
     } catch (error) {
@@ -69,6 +74,19 @@ function DocumentsSignUp({ setFormData, formData }) {
           />
         </label>
         <label
+          htmlFor="voterid"
+          className="block p-1 text-lg font-medium text-gray-700"
+        >
+          Enter your voter id
+          <input
+            type="text"
+            name="voterId"
+            id="voterId"
+            className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+
+          />
+        </label>
+        <label
           htmlFor="Disability"
           className="block p-1 text-lg font-medium text-gray-700"
         >
@@ -77,6 +95,7 @@ function DocumentsSignUp({ setFormData, formData }) {
             name="disability"
             id="disability"
             className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            onChange={(e) => setDisability(e.target.value)}
           >
             <option value="default">Select</option>
             <option value="Braille">Blind</option>

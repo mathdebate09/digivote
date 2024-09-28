@@ -13,6 +13,7 @@ import SignUp from "../components/SignUp";
 import Voting from "../components/Voting";
 import RajyaSabha from "../components/Voting/RajyaSabha";
 import LokSabha from "../components/Voting/LokSabha";
+import ProtectedRoute from "../components/Layout/ProtectedRoute";
 
 function PageRouter() {
   const routes = createBrowserRouter([
@@ -30,28 +31,35 @@ function PageRouter() {
       element: <BoothMap />,
     },
     {
-      path: "/home",
-      element: <Home />,
-    },
-    {
-      path: "/profile",
-      element: <Profile />,
-    },
-    {
       path: "/signup",
       element: <SignUp />,
     },
     {
-      path: "/voting",
-      element: <Voting />,
-    },
-    {
-      path: '/voting/rajya-sabha',
-      element: <RajyaSabha/>
-    },
-    {
-      path: '/voting/lok-sabha',
-      element: <LokSabha/>
+      path: '/',
+      element: <ProtectedRoute/>,
+      children:
+      [
+        {
+          path: "/home",
+          element: <Home />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/voting",
+          element: <Voting />,
+        },
+        {
+          path: '/voting/rajya-sabha',
+          element: <RajyaSabha/>
+        },
+        {
+          path: '/voting/lok-sabha',
+          element: <LokSabha/>
+        }
+      ]
     }
   ]);
 

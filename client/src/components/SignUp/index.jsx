@@ -4,6 +4,8 @@ import DetailsSignUp from "./DetailsSignUp";
 import DocumentsSignUp from "./DocumentsSignUp";
 import Navbar from "./Navbar";
 
+import {handleAudio} from "../../utils/helper"
+
 function SignUp() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState([]);
