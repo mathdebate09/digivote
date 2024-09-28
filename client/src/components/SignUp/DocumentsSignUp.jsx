@@ -1,7 +1,14 @@
 import React from "react";
+import {auth} from '../../firebase/config'
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function DocumentsSignUp() {
-  const handleSubmit = (e) => {
+function DocumentsSignUp({setFormData, formData}) {
+  const [errorMessages,setErrorMessages] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const userDocs = {
@@ -9,8 +16,41 @@ function DocumentsSignUp() {
       Disability: data.get("disability"),
       MedicalCertificate: data.get("MedCert"),
     };
-    console.log(userDocs);
+
+    if(!formData.name || !formData.password || !formData.email){
+      return setErrorMessages("All fields are required");
+    }
+
+    try {
+
+      const res = await fetch('http://localhost:3000/api/auth/signup',{
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(formData)
+      });
+      const data = await res.json();
+
+      if(data.success === false){
+        setLoading(false);
+        return setErrorMessages(data.message);
+      }
+
+      setLoading(false)
+
+
+      if(res.ok){
+        navigate('/login')
+      }
+
+
+    } catch(error){
+      setErrorMessages(error.message);
+      setLoading(false);
+
+    }
+    
   };
+
 
   return (
     <div className="flex h-screen -mt-20 flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10">
@@ -42,12 +82,13 @@ function DocumentsSignUp() {
           <select
             name="disability"
             id="disability"
+            
             className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value="default">Select</option>
-            <option value="Braille">Braille</option>
-            <option value="Interpreter">Interpreter</option>
-            <option value="HearingAid">Hearing Aid</option>
+            <option value="Braille">Blind</option>
+            <option value="Interpreter">Mute</option>
+            <option value="HearingAid">Deaf</option>
           </select>
         </label>
         <label

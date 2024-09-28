@@ -7,13 +7,14 @@ import Navbar from "./Navbar";
 
 function SignUp() {
   const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState([]);
 
   const handleNextClick = () => {
     if (step === 1) {
       setStep(2); // Go to step 2 (DocumentsSignUp)
     }
   };
-
+  
   return (
     <div>
       <Navbar />
@@ -22,8 +23,9 @@ function SignUp() {
           handleNextClick={handleNextClick}
           step={step}
           setStep={setStep}
+          setFormData={setFormData}
         />
-      : <DocumentsSignUp />}
+      : <DocumentsSignUp setFormData={setFormData} formData={formData}/>}
     </div>
   );
 }

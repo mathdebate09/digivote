@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import { auth } from '../../firebase/config';
+import {
+  signInWithEmailAndPassword,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+} from 'firebase/auth';
 
-function DetailsSignUp({ handleNextClick, step, setStep }) {
+
+
+function DetailsSignUp({ handleNextClick, step, setStep, setFormData }) {
   const [userInfo, setUserInfo] = useState({
     name: "",
     email: "",
@@ -52,9 +60,12 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
     e.preventDefault();
     if (!errors.email && !errors.password) {
       setStep(2);
+      setFormData(prev => { return {...prev, ...userInfo} })
       handleNextClick();
     }
   };
+
+;
 
   return (
     <div className="flex -mt-2 md:-mt-8 flex-col items-center justify-center p-3 sm:p-6 md:p-8">
@@ -150,6 +161,7 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
           )}
         </div>
       </form>
+
     </div>
   );
 }
