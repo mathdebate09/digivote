@@ -5,9 +5,9 @@ const {prisma} = require('../utils/prisma')
 require('dotenv').config();
 
 const signup = async (req, res, next) => {
-    const {username, email, password} = req.body;
+    const {name, email, password} = req.body;
 
-    if(!username || !email || !password || password === '' || email === '' || username === ''){
+    if(!name || !email || !password || password === '' || email === '' || name === ''){
         next(errorHandler(400,"All fields are required"));
     }
 
@@ -17,7 +17,7 @@ const signup = async (req, res, next) => {
                 data: {
                     email   :   email,
                     password:   hashedPassword,
-                    userName: username
+                    userName: name
                 }
             })
             res.json(newUser)
