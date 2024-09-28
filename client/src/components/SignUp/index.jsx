@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
+import { handleAudio } from "../../utils/helper";
 import DetailsSignUp from "./DetailsSignUp";
 import DocumentsSignUp from "./DocumentsSignUp";
 import Navbar from "./Navbar";
-
-import {handleAudio} from "../../utils/helper"
 
 function SignUp() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState([]);
 
   useEffect(() => {
-    handleAudio("To register a voter for your nearest constituency, keep you aadhar card and disability records if any ready, if any")
-  })
+    handleAudio(
+      "To register a voter for your nearest constituency, keep you aadhar card and disability records if any ready, if any"
+    );
+  });
 
   const handleNextClick = () => {
     if (step === 1) {
@@ -30,7 +31,7 @@ function SignUp() {
           setStep={setStep}
           setFormData={setFormData}
         />
-      : <DocumentsSignUp setFormData={setFormData} formData={formData}/>}
+      : <DocumentsSignUp setFormData={setFormData} formData={formData} />}
     </div>
   );
 }

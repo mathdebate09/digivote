@@ -1,23 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'react-router-dom';
-import { CgProfile } from 'react-icons/cg';
-import { MdHome } from "react-icons/md";
-import { MdHowToVote } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
 import { IoLocation } from "react-icons/io5";
+import { MdHome, MdHowToVote } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 function NavMobile() {
   return (
-    <nav className="fixed bottom-4 left-4 right-4 rounded-xl flex items-center px-4 justify-around bg-black-soft shadow-lg py-4 font-body font-medium md:hidden">
-      <ul className="flex text-lg items-center w-full justify-around">
+    <nav className="fixed bottom-4 left-4 right-4 flex items-center justify-around rounded-xl bg-black-soft px-4 py-4 font-body font-medium shadow-lg md:hidden">
+      <ul className="flex w-full items-center justify-around text-lg">
         <li>
-          <Link to="/home"><MdHome className="text-3xl text-white" /></Link>
+          <Link to="/home">
+            <MdHome className="text-3xl text-white" />
+          </Link>
         </li>
         <li>
-          <Link to="/voting"><MdHowToVote className="text-3xl text-white" /></Link>
+          <Link to="/voting">
+            <MdHowToVote className="text-3xl text-white" />
+          </Link>
         </li>
         <li>
-          <Link to="/boothmap"><IoLocation className="text-3xl text-white" /></Link>
+          <Link to="/boothmap">
+            <IoLocation className="text-3xl text-white" />
+          </Link>
         </li>
         <li>
           <Link to="/profile">

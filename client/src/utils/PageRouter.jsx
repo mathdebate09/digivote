@@ -7,13 +7,13 @@ import BoothMap from "../components/BoothMap";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../components/Home";
 import Landing from "../components/Landing";
+import ProtectedRoute from "../components/Layout/ProtectedRoute";
 import Login from "../components/Login";
 import Profile from "../components/Profile";
 import SignUp from "../components/SignUp";
 import Voting from "../components/Voting";
-import RajyaSabha from "../components/Voting/RajyaSabha";
 import LokSabha from "../components/Voting/LokSabha";
-import ProtectedRoute from "../components/Layout/ProtectedRoute";
+import RajyaSabha from "../components/Voting/RajyaSabha";
 
 function PageRouter() {
   const routes = createBrowserRouter([
@@ -35,10 +35,9 @@ function PageRouter() {
       element: <SignUp />,
     },
     {
-      path: '/',
-      element: <ProtectedRoute/>,
-      children:
-      [
+      path: "/",
+      element: <ProtectedRoute />,
+      children: [
         {
           path: "/home",
           element: <Home />,
@@ -52,15 +51,15 @@ function PageRouter() {
           element: <Voting />,
         },
         {
-          path: '/voting/rajya-sabha',
-          element: <RajyaSabha/>
+          path: "/voting/rajya-sabha",
+          element: <RajyaSabha />,
         },
         {
-          path: '/voting/lok-sabha',
-          element: <LokSabha/>
-        }
-      ]
-    }
+          path: "/voting/lok-sabha",
+          element: <LokSabha />,
+        },
+      ],
+    },
   ]);
 
   return <RouterProvider router={routes} />;

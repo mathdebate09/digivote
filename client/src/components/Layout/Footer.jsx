@@ -7,7 +7,7 @@ import logo from "../../assets/logos/digivote.png";
 function Footer() {
   return (
     <>
-      <footer className="bg-transparent border-t border-doubled border-indigo-950">
+      <footer className="border-doubled border-t border-indigo-950 bg-transparent">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
@@ -82,7 +82,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <hr className="border-blue-800 my-6 sm:mx-auto lg:my-8" />
+          <hr className="my-6 border-blue-800 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-center">
             <span className="cursor-default text-sm text-black-soft sm:text-center">
               <svg

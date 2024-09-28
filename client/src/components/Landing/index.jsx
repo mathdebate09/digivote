@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { useNavigate } from "react-router-dom";
 
+import { handleAudio } from "../../utils/helper";
 import ChatBot from "../ChatBot";
-import TranslateButton from "../TranslateButton";
-
-
 import Footer from "../Layout/Footer";
+import SignButton from "../SignButton";
+import TranslateButton from "../TranslateButton";
 import Hero from "./Hero";
 import LandingNav from "./LandingNav";
-import SignButton from "../SignButton";
-import { handleAudio } from "../../utils/helper";
 
 function Landing() {
-  useEffect(()=> {
-    handleAudio("Welcome to Digivote, a more secure and user friendly web app with accessibility for normal and the specially abled, alike")
-  })
+  useEffect(() => {
+    handleAudio(
+      "Welcome to Digivote, a more secure and user friendly web app with accessibility for normal and the specially abled, alike"
+    );
+  });
   // const textVariants = {
   //   hidden: { opacity: 0, x: -50 },
   //   visible: { opacity: 1, x: 0, transition: { duration: 1 } },
@@ -68,7 +68,7 @@ function Landing() {
   //   };
   // }, []);
   return (
-    <div className="bg-gradient-to-tr from-gray-100 via-cyan-50 to-blue-200 bg-opacity-5">
+    <div className="bg-opacity-5 bg-gradient-to-tr from-gray-100 via-cyan-50 to-blue-200">
       {/* <motion.div
         className="text-center text-8xl font-bold max-md:text-6xl max-sm:text-4xl"
         variants={textVariants}

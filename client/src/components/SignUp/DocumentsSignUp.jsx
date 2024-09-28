@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {useDispatch, useSelector} from 'react-redux';
+
 import { signinSuccess } from "../../context/user/userSlice";
 import { auth } from "../../firebase/config";
 
@@ -17,7 +18,7 @@ function DocumentsSignUp({ setFormData, formData }) {
     const data = new FormData(e.target);
     const userDocs = {
       aadhar: data.get("Aadhar"),
-      voterId: data.get('voterId'),
+      voterId: data.get("voterId"),
       disability: data.get("disability"),
       medicalCertificate: data.get("MedCert"),
     };
@@ -42,7 +43,7 @@ function DocumentsSignUp({ setFormData, formData }) {
       setLoading(false);
 
       if (res.ok) {
-        dispatch(signinSuccess({...formData, login: false, disability  }))
+        dispatch(signinSuccess({ ...formData, login: false, disability }));
         navigate("/login");
       }
     } catch (error) {
@@ -83,7 +84,6 @@ function DocumentsSignUp({ setFormData, formData }) {
             name="voterId"
             id="voterId"
             className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-
           />
         </label>
         <label
