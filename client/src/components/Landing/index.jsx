@@ -13,6 +13,7 @@ import Footer from "../Layout/Footer";
 import Hero from "./Hero";
 import LandingNav from "./LandingNav";
 import SignButton from "../SignButton";
+import { handleAudio } from "../../utils/helper";
 
 function Landing() {
   useEffect(()=> {
