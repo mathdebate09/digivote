@@ -9,6 +9,7 @@ import {
   Pin,
   useAdvancedMarkerRef
 } from '@vis.gl/react-google-maps';
+import LandingNav from '../Landing/LandingNav';
 
 const fetchLocations = async () => {
   try {
@@ -112,8 +113,11 @@ function BoothMap() {
 
 
   return (
+    <div className="overflow-hidden">
+    <LandingNav/>
     <APIProvider apiKey={API_KEY} libraries={['marker']}>
       <Map
+       className='w-screen h-screen overflow-hidden p-0 m-0'
         mapId={'bf51a910020fa25a'}
         defaultZoom={12}
         defaultCenter={{lat: 19.0390, lng: 72.8619}}
@@ -206,13 +210,14 @@ function BoothMap() {
                 if(marker.id === selectedId){
                   return (
                     <div>
-                      <h1>Polling Booth</h1>
-                      <h3>Name: {marker.name}</h3>
-                      <p>Address: {marker.address}</p>
+                      <h1 className='text-2xl font-bold'>Polling Booth</h1>
+                      <h3 className='text-lg font-semibold'>Name: {marker.name}</h3>
+                      <p className='text-md'>Address: {marker.address}</p>
+                      <br/>
                       <ul>
-                        <li>braillie: {marker.braille}</li>
-                        <li>hearing aid: {marker.hearingAid}</li>
-                        <li>interpreter: {marker.interpreter}</li>
+                        <li className='text-md'>braillie: {marker.braille}</li>
+                        <li className='text-md'>hearing aid: {marker.hearingAid}</li>
+                        <li className='text-md'>interpreter: {marker.interpreter}</li>
                       </ul>
                     </div>
                   )
@@ -223,6 +228,7 @@ function BoothMap() {
         )}
       </Map>
     </APIProvider>
+    </div>
   );
 }
 
