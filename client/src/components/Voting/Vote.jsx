@@ -5,6 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { selectCandidate, castVote, resetVote } from "../../context/vote/voteSlice"; // Import actions
 import { people } from "../../utils/data";
 import { useNavigate } from "react-router-dom";
+import { handleAudio } from "../../utils/helper"
 
 function VotingPage() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function VotingPage() {
     if (selectedCandidate) {
       // Open the modal for confirmation
       setIsModalOpen(true);
+      handleAudio(`Are y ou sure you want to vote ${selectedCandidate}`)
     } else {
       alert("Please select a candidate to cast your vote.");
     }
@@ -24,6 +26,7 @@ function VotingPage() {
 
   const confirmVote = () => {
     dispatch(castVote()); // Dispatch action to cast vote
+    handleAudio("Your vote has been cast")
     setIsModalOpen(false); // Close the modal
   };
 
@@ -41,7 +44,7 @@ function VotingPage() {
             You voted for: <span className="font-semibold">{selectedCandidate.name}</span>
           </p>
           <button onClick={() => navigate('/')} className="mt-4 bg-gray-600 text-white p-2 rounded-lg">
-            Go to home 
+            Go to home
           </button>
         </div>
       ) : (

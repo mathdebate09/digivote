@@ -10,7 +10,7 @@ import heroHeading from "../../assets/vectors/hero-landing.png";
 function Hero() {
   return (
     <section className="flex flex-col items-center justify-center pb-4 md:pb-16 md:pt-4 font-body font-medium">
-      <div onClick={() => handleAudio("Secure.Accessible.Reliable.Simple. DigiVote prioritizes accessibility, ensuring everyone can participate with ease. Built with top-notch security, your vote remains safe, reliable, and confidential.")} className="md:py-16 py-4 text-center md:text-7xl text-3xl font-bold tracking-wide text-black-softer">
+      <div onClick={() => handleAudio("Secure,Accessible,Reliable,Simple, DigiVote prioritizes accessibility, ensuring everyone can participate with ease. Built with top-notch security, your vote remains safe, reliable, and confidential.")} className="md:py-16 py-4 text-center md:text-7xl text-3xl font-bold tracking-wide text-black-softer">
         <h2>
           Secure . <span className="italic text-gray-500">Accessible .</span>
         </h2>

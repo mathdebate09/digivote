@@ -13,8 +13,12 @@ import Footer from "../Layout/Footer";
 import Hero from "./Hero";
 import LandingNav from "./LandingNav";
 import SignButton from "../SignButton";
+import { handleAudio } from "../../utils/helper";
 
 function Landing() {
+  useEffect(()=> {
+    handleAudio("Welcome to Digivote, a more secure and user friendly web app with accessibility for normal and the specially abled, alike")
+  })
   // const textVariants = {
   //   hidden: { opacity: 0, x: -50 },
   //   visible: { opacity: 1, x: 0, transition: { duration: 1 } },

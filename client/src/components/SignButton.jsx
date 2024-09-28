@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { MdCancel } from 'react-icons/md';
 import { FaAmericanSignLanguageInterpreting } from 'react-icons/fa';
+import SampleVideo from "../assets/videos/SampleVideo.mp4";
+import sorry from "../assets/logos/sorry.png";
 
 const SignButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +32,9 @@ const SignButton = () => {
           </button>
         </div>
         <div className="p-3 flex-1 overflow-y-auto bg-gray-100 flex flex-col items-center justify-center">
-          <img src="path_to_your_gif.gif" alt="Sign Language GIF" className="w-full h-full object-contain" />
+          <video src={SampleVideo} autoPlay loop className="w-3/4 h-3/4 object-contain mb-4" />
+          <img src={sorry} alt='sorry' className="w-0 h-0 object-contain mb-4" />
+          <p className="text-center text-gray-700">This feature is in the building phase.</p>
         </div>
       </div>
     </div>

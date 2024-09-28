@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import { handleAudio } from "../../utils/helper"
 
 import logo from "../../assets/logos/digivote.png";
 
@@ -12,9 +13,9 @@ function Navbar({}) {
         <h1 className="font-logo text-blue-950">DigiVote</h1>
       </Link>
       <ul className="md:flex text-lg items-center gap-14 hidden">
-        <Link to="/home">Home</Link>
-        <Link to="/boothmap">Booths</Link>
-        <Link to="/login"><button className="font-bold text-blue-600">Log In</button></Link>
+        <Link onClick={() => handleAudio("Redirecting to home page")} to="/home">Home</Link>
+        <Link onClick={() => handleAudio("show the list of polling stations")} to="/boothmap">Booths</Link>
+        <Link onClick={() => handleAudio("Redirecting to home page")} to="/login"><button className="font-bold text-blue-600">Log In</button></Link>
       </ul>
     </nav>
   );
