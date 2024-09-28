@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
 function DetailsSignUp({ handleNextClick, step, setStep }) {
@@ -55,17 +56,20 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
       handleNextClick();
     }
   };
-
+  
   return (
-    <div className="flex -mt-2 md:-mt-8 flex-col items-center justify-center p-3 sm:p-6 md:p-8">
-      <h1 className="mb-6 text-2xl font-bold text-center">
+    <div className="-mt-2 flex flex-col items-center justify-center p-3 sm:p-6 md:-mt-8 md:p-8">
+      <h1 className="mb-6 text-center text-2xl font-bold">
         Set-up your DigiVote Account
       </h1>
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white rounded-2xl border-2 border-black p-6 shadow-lg"
+        className="border-black w-full max-w-md rounded-2xl border-2 bg-white p-6 shadow-lg"
       >
-        <label htmlFor="name" className="block p-1 text-lg font-medium text-gray-700">
+        <label
+          htmlFor="name"
+          className="block p-1 text-lg font-medium text-gray-700"
+        >
           Name
         </label>
         <input
@@ -78,7 +82,6 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
           onChange={handleChange}
           className="mt-2 block w-full rounded-md border border-gray-300 px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
-
         <label htmlFor="email" className="block p-1 text-lg text-gray-700">
           Enter your Email
           <input
@@ -90,11 +93,13 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
             value={userInfo.email}
             onChange={handleChange}
             className={`mt-2 block w-full rounded-md border px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:outline-none focus:ring-2 ${
-              errors.email ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              errors.email ?
+                "border-red-500 focus:border-red-500 focus:ring-red-500"
+              : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
             }`}
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-red-500 flex items-center">
+            <p className="mt-1 flex items-center text-sm text-red-500">
               <FaTimesCircle className="mr-1" /> {errors.email}
             </p>
           )}
@@ -129,16 +134,18 @@ function DetailsSignUp({ handleNextClick, step, setStep }) {
             value={userInfo.confirmpass}
             onChange={handleChange}
             className={`mt-2 block w-full rounded-md border px-4 py-2 shadow-sm transition duration-300 ease-in-out focus:outline-none focus:ring-2 ${
-              errors.password ? "border-red-500 focus:border-red-500 focus:ring-red-500" : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
+              errors.password ?
+                "border-red-500 focus:border-red-500 focus:ring-red-500"
+              : "border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
             }`}
           />
           {errors.password && (
-            <p className="mt-1 text-sm text-red-500 flex items-center">
+            <p className="mt-1 flex items-center text-sm text-red-500">
               <FaTimesCircle className="mr-1" /> {errors.password}
             </p>
           )}
         </label>
-        <div className="flex mt-4 items-center justify-center p-2">
+        <div className="mt-4 flex items-center justify-center p-2">
           {/* Next Button, only visible at step 1 */}
           {step === 1 && (
             <button
