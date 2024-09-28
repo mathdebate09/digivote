@@ -2,6 +2,44 @@
 
 An extremely accessible voting portal with widespread screen reader and multilingual support.
 
+## Preview
+
+### Google Drive Link
+
+[Google Drive Video](https://drive.google.com/drive/folders/1Kzk2Qfv4ZqljYBfu76YY3H3KTNYRDOxH?usp=sharing)
+
+### Landing Page
+
+![LandingPage](public\landing-page.png)
+
+### Home Page
+
+![HomePage](public\home-page.png)
+
+### Home Page - Mobile
+
+![HomePageMobile](public\home-page-phone.png)
+
+### Polling Booth Maps
+
+![Polling Booth maps](public\boothmap.png)
+
+### Login Interface
+
+![Login-1](public\login-1.png)
+
+### 2FA Secure Auth - Firebase
+
+![2FA](public\2fa-auth.png)
+
+### AI Sahayak - QnA Assistant
+
+![chatbot](public\chatbot.png)
+
+### Multilingual Translation
+
+![chatbot](public\translation.png)
+
 ## Features
 
 - Minimalistic and modern UI design with UX
@@ -55,5 +93,13 @@ cd client && npm install && cd ..
 # Change to rag directory
 cd rag
 # setting up python env
-
+python -m venv myenv
+# windows - activatiing venv
+myenv/Scripts/activate
+# linux - activatiing venv
+source myenv/bin/activate
+# installing deps
+pip install requirements.txt
+# running FAST API server
+uvicorn main:app --reload
 ```
