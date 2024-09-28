@@ -4,18 +4,13 @@ import { Link } from "react-router-dom";
 
 import profileImage from "../../assets/vectors/profile.svg";
 import users from "../../utils/userdata";
+import { ChangeTextSize } from "../ChangeTXT/ChangeText";
 import Layout from "../Layout";
 
 function Profile() {
   const id = 2;
   const [textsize, setTextSize] = useState(0);
   const user = users.find((item) => item.id === id);
-
-  // Function to cycle between text sizes
-  const changeSize = () => {
-    setTextSize((prev) => (prev + 1) % 3); // Cycle between 0, 1, and 2
-  };
-
   if (!user) {
     return <p>User not registered</p>;
   }
@@ -27,13 +22,7 @@ function Profile() {
   return (
     <Layout bgColor={"bg-blue-50"}>
       {/* Button to change text size */}
-      <button
-        onClick={changeSize}
-        className="mb-4 rounded bg-gray-300 p-2 hover:bg-gray-400"
-      >
-        Change Text Size
-      </button>
-
+      <ChangeTextSize onChange={setTextSize} />
       <div className="flex h-screen flex-col items-center justify-center">
         <div className="-mt-48 flex h-80 w-fit items-center justify-center rounded-xl border bg-white p-12 shadow-lg">
           <img
